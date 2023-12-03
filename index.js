@@ -100,7 +100,7 @@ const contact = document.getElementById("contact-flex");
 const options = {
   root: null, // use the viewport as the root
   rootMargin: "0px",
-  threshold: 0.2, // trigger when 20% of the element is in the viewport
+  threshold: 0.01, // trigger when 1% of the element is in the viewport
 };
 const optionsContact = {
   root: null,
