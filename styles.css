@@ -72,7 +72,7 @@
 }
 
 main {
-  display: none;
+  /* display: none; */
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -88,8 +88,8 @@ nav {
   height: 10vh;
 }
 nav a {
-  padding: 1vw;
-  font-size: 1.1vw;
+  padding: 1.3vw;
+  font-size: 1vw;
   text-decoration: none;
   color: rgb(245, 245, 245);
   width: 100px;
@@ -100,18 +100,24 @@ nav a {
 
 nav a:hover {
   background-image: url(images/splatter.navbar.png);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   color: black;
 }
 nav a.selected {
   background-image: url(images/splatter.navbar.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   color: black;
 }
 .div-menu {
   display: none;
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 /* --------responsice navbar----- */
 @media screen and (max-width: 900px) {
@@ -134,7 +140,7 @@ nav a.selected {
   .topnav.responsive {
     position: fixed;
     top: 0;
-    left: -40vw;
+    left: -41vw;
     width: 40vw;
     height: 100%;
     background-color: rgb(48, 48, 48);
@@ -170,8 +176,9 @@ nav a.selected {
     transition: none !important;
   }
   .topnav.responsive a {
-    font-size: 4vw;
-    margin: 3.5vw 0;
+    font-size: 1rem;
+    margin: 25px auto;
+    padding: 20px;
     display: block;
   }
 }
@@ -229,7 +236,7 @@ h2 {
   justify-content: center;
   position: relative;
 }
-/* mexri edw-------------------------------------- */
+
 #welcome-header {
   /* height: auto; */
   width: 50%;

@@ -34,6 +34,29 @@ anime
   });
 //---------------welcome screen------------------------
 //
+//onscroll navbar-------
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  var divMenu = document.getElementsByClassName("div-menu")[0];
+
+  if (
+    (document.body.scrollTop > 500 ||
+      document.documentElement.scrollTop > 500) &&
+    divMenu &&
+    !(getComputedStyle(divMenu).display === "block")
+  ) {
+    document.getElementById("navbar").classList.add("scrolled");
+    document.getElementById("home").classList.remove("selected");
+  } else {
+    document.getElementById("navbar").classList.remove("scrolled");
+    document.getElementById("home").classList.add("selected");
+  }
+}
+//onscroll navbar---------
+//
 //-----------responsive navbar-------------
 function myFunction() {
   var x = document.getElementById("nav-container");
@@ -53,10 +76,10 @@ function myFunction() {
 const swiper = new Swiper(".swiper", {
   grabCursor: true,
   loop: true,
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 
   navigation: {
     nextEl: ".swiper-button-next",
