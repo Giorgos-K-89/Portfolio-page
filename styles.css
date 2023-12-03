@@ -72,7 +72,7 @@
 }
 
 main {
-  /* display: none; */
+  display: none;
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -327,6 +327,10 @@ h2 {
   right: -17vw;
   transform: translateY(-50%);
   z-index: 1000;
+}
+#social a {
+  text-decoration: none;
+  color: black;
 }
 #social .fa {
   width: 20vw;
