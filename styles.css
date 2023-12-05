@@ -429,6 +429,26 @@ h2 {
   #avatar {
     position: relative;
   }
+  #welcome-header h2 {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #avatar img {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 320px) {
+  #image-container {
+    height: 700px;
+  }
+  #avatar img {
+    width: 60%;
+  }
+  #avatar {
+    position: relative;
+  }
 }
 #about {
   width: 100%;
