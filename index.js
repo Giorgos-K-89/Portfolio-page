@@ -35,26 +35,26 @@ anime
 //---------------welcome screen------------------------
 //
 //onscroll navbar-------
-window.onscroll = function () {
-  scrollFunction();
-};
+window.onscroll = scrollFunction;
 
 function scrollFunction() {
-  var divMenu = document.getElementsByClassName("div-menu")[0];
+  var divMenu = document.querySelector(".div-menu");
 
-  if (
-    (document.body.scrollTop > 500 ||
-      document.documentElement.scrollTop > 500) &&
-    divMenu &&
-    !(getComputedStyle(divMenu).display === "block")
-  ) {
-    document.getElementById("navbar").classList.add("scrolled");
-    document.getElementById("home").classList.remove("selected");
+  var navbar = document.getElementById("navbar");
+  var home = document.getElementById("home");
+
+  if (divMenu && getComputedStyle(divMenu).display === "block") {
+    home.classList.remove("selected");
+    navbar.classList.remove("scrolled");
   } else {
-    document.getElementById("navbar").classList.remove("scrolled");
-    document.getElementById("home").classList.add("selected");
+    var scrollCondition =
+      document.body.scrollTop > 500 || document.documentElement.scrollTop > 500;
+
+    navbar.classList.toggle("scrolled", scrollCondition);
+    home.classList.toggle("selected", !scrollCondition);
   }
 }
+
 //onscroll navbar---------
 //
 //-----------responsive navbar-------------
@@ -77,7 +77,7 @@ const swiper = new Swiper(".swiper", {
   grabCursor: true,
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
 
@@ -100,7 +100,7 @@ const contact = document.getElementById("contact-flex");
 const options = {
   root: null, // use the viewport as the root
   rootMargin: "0px",
-  threshold: 0.2, // trigger when 20% of the element is in the viewport
+  threshold: 0.01, // trigger when 20% of the element is in the viewport
 };
 const optionsContact = {
   root: null,
